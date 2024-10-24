@@ -14,6 +14,10 @@ Plug 'hrsh7th/nvim-cmp'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'nvim-telescope/telescope.nvim'
+
 vim.call('plug#end')
 
 require('onedark').setup {

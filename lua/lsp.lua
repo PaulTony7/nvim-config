@@ -32,6 +32,29 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- These are example language servers. 
 require('lspconfig').csharp_ls.setup({})
 
+local builtin = require('telescope.builtin')
+require('telescope').setup{ 
+  defaults = { 
+    file_ignore_patterns = { 
+      ".git" 
+    },
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			--"--smart-case", -- Disables ignore case if any are Upper letter
+			"--ignore-case"
+		}
+  }
+}
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
 local cmp = require('cmp') 
 
 cmp.setup({
