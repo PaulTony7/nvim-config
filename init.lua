@@ -7,8 +7,6 @@ vim.call('plug#begin')
 
 -- https://github.com/navarasu/onedark.nvim
 Plug 'navarasu/onedark.nvim'
-Plug "rebelot/kanagawa.nvim"
-Plug 'catppuccin/nvim'
 
 Plug 'neovim/nvim-lspconfig'
 
@@ -28,10 +26,10 @@ vim.call('plug#end')
 
 -- vim.cmd('colorscheme catppuccin-macchiato') 
 require('onedark').setup {
-    style = 'warmer'
+    style = 'warm'
 }
 require('onedark').load()
 
-require('lsp')
+require('plugins')
 
-require('csbind').setup()
+require('lsp')
