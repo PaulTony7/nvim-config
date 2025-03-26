@@ -16,13 +16,17 @@ require('telescope').setup{
 		}
   }
 }
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<leader>lf', function() 
-   require("telescope.builtin").lsp_document_symbols({symbols={"method","function"}, symbol_width=200}) 
+  require("telescope.builtin").lsp_document_symbols({symbols={"method","function"}, symbol_width=200}) 
 end, { desc = 'Telescope list functions' })
+vim.keymap.set('n', '<leader>fr', function()
+  require("telescope.builtin").lsp_references()
+end, { desc = 'Telescope function references'})
 
 local cmp = require('cmp') 
 
