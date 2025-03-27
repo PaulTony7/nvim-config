@@ -16,15 +16,18 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 
 Plug 'nvim-lua/plenary.nvim'
 
+Plug 'nvim-treesitter/nvim-treesitter'
+
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'Decodetalkers/csharpls-extended-lsp.nvim'
 
 Plug 'tikhomirov/vim-glsl'
 
+Plug 'sindrets/diffview.nvim'
+
 vim.call('plug#end')
 
--- vim.cmd('colorscheme catppuccin-macchiato') 
 require('onedark').setup {
     style = 'warm'
 }

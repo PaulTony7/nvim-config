@@ -3,9 +3,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Indents
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
@@ -29,6 +29,9 @@ vim.opt.signcolumn = 'yes'
 
 --Status Line
 vim.o.statusline = "%f%m%r %=%14.(%l,%c%V%)"
+
+-- disable shada files
+vim.opt.shadafile = "NONE"
 
 -- File Browsing
 vim.g.netrw_banner = false
