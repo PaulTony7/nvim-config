@@ -30,6 +30,9 @@ vim.opt.signcolumn = 'yes'
 --Status Line
 vim.o.statusline = "%f%m%r %=%14.(%l,%c%V%)"
 
+-- disable shada files
+vim.opt.shadafile = "NONE"
+
 -- File Browsing
 vim.g.netrw_banner = false
 vim.g.netrw_winsize = 20
