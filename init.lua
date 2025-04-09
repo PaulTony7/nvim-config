@@ -26,6 +26,10 @@ Plug 'tikhomirov/vim-glsl'
 
 Plug 'sindrets/diffview.nvim'
 
+Plug "MunifTanjim/nui.nvim"
+Plug "nvim-tree/nvim-web-devicons"
+Plug 'nvim-neo-tree/neo-tree.nvim'
+
 vim.call('plug#end')
 
 require('onedark').setup {

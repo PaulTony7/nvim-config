@@ -38,6 +38,7 @@ vim.g.netrw_banner = false
 vim.g.netrw_winsize = 20
 vim.g.netrw_altv = 1
 vim.g.netrw_liststyle = 3
-vim.keymap.set("n", "<leader>e", ":Lexplore!<CR>", { noremap = true, silent = true, desc = "Open Netrw Explorer" })
+-- vim.keymap.set("n", "<leader>e", ":Lexplore!<CR>", { noremap = true, silent = true, desc = "Open Netrw Explorer" })
+vim.keymap.set('n', '<leader>e', ':Neotree toggle right<CR>')
 
 vim.keymap.set('n', "<C-l>", vim.cmd.noh)
