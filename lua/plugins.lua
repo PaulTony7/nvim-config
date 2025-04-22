@@ -12,6 +12,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
+-- debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'rcarriga/nvim-dap-ui'
+
 Plug 'nvim-lua/plenary.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -34,6 +39,7 @@ vim.call('plug#end')
 require('plugins/telescope')
 require('plugins/diffview')
 require('plugins/neotree')
+require('plugins/debugging')
 
 require('onedark').setup {
     style = 'warm'
