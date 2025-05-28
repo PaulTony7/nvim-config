@@ -30,9 +30,11 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'sindrets/diffview.nvim'
 
 -- neo-tree
-Plug "MunifTanjim/nui.nvim"
+Plug 'MunifTanjim/nui.nvim'
 Plug "nvim-tree/nvim-web-devicons"
 Plug 'nvim-neo-tree/neo-tree.nvim'
+
+-- Plug 'GustavEikaas/easy-dotnet.nvim'
 
 vim.call('plug#end')
 
@@ -40,6 +42,8 @@ require('plugins/telescope')
 require('plugins/diffview')
 require('plugins/neotree')
 require('plugins/debugging')
+require('plugins/easy-dotnet')
+require('plugins/treesitter')
 
 require('onedark').setup {
     style = 'warm'
