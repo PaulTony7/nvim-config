@@ -28,17 +28,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- CSHARP NVIM 0.11+
+vim.lsp.config('csharp_ls', {
+  handlers = {
+    ["textDocument/definition"] = require('csharpls_extended').handler,
+    ["textDocument/typeDefinition"] = require('csharpls_extended').handler
+  },
+  cmd = { csharpls }
+})
+vim.lsp.enable('csharp_ls')
+require('csharpls_extended').buf_read_cmd_bind()
+
 -- You'll find a list of language servers here:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- These are example language servers. 
-require('lspconfig').csharp_ls.setup(
-	{
-		handlers = {
-    ["textDocument/definition"] = require('csharpls_extended').handler,
-    ["textDocument/typeDefinition"] = require('csharpls_extended').handler,
-        },	
-	}
-)
-require('lspconfig').clangd.setup{}
+-- require('lspconfig').csharp_ls.setup(
+-- 	{
+-- 		handlers = {
+--     ["textDocument/definition"] = require('csharpls_extended').handler,
+--     ["textDocument/typeDefinition"] = require('csharpls_extended').handler,
+--         },	
+-- 	}
+-- )
+-- require('lspconfig').clangd.setup{}
 
 -- require('lspconfig').lua_ls.setup {}
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pyright')

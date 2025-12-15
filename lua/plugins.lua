@@ -19,7 +19,7 @@ Plug 'rcarriga/nvim-dap-ui'
 
 Plug 'nvim-lua/plenary.nvim'
 
-Plug 'nvim-treesitter/nvim-treesitter'
+-- Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'nvim-telescope/telescope.nvim'
 
@@ -43,7 +43,7 @@ require('plugins/diffview')
 require('plugins/neotree')
 require('plugins/debugging')
 require('plugins/easy-dotnet')
-require('plugins/treesitter')
+-- require('plugins/treesitter')
 
 require('onedark').setup {
     style = 'warm'
