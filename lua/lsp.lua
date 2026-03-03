@@ -1,14 +1,15 @@
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
-local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+-- local lspconfig_defaults = require('lspconfig').util.default_config
+-- lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+--   'force',
+--   lspconfig_defaults.capabilities,
+--   require('cmp_nvim_lsp').default_capabilities()
+-- )
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
@@ -28,11 +29,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.lsp.config['gdscript'] = {
-  cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
-  filetypes = { 'gd', 'gdscript', 'gdscript3' },
-}
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+        pathStrict = false, -- makes LazyDev work properly
+      },
+      workspace = {
+        checkThirdParty = false,
+        ignoreDir = { ".git", ".github" },
+      },
+    }
+  }
+})
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
-vim.lsp.enable('gdscript')
 
