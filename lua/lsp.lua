@@ -28,5 +28,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.lsp.config['gdscript'] = {
+  cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+  filetypes = { 'gd', 'gdscript', 'gdscript3' },
+}
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
+vim.lsp.enable('gdscript')
+

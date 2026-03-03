@@ -15,7 +15,6 @@ return {
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'Decodetalkers/csharpls-extended-lsp.nvim' },
-    { 'folke/lazydev.nvim', ft = 'lua', opts = {} }, -- Added this for your 'vim' global issue
 
     -- Debugging
     {
@@ -59,4 +58,19 @@ return {
         },
       },
     },
+
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    config = function ()
+      ---@diagnostic disable-next-line
+      require('nvim-treesitter.config').setup{
+        ensure_installed = {'lua', 'c', 'gdscript', 'godot-resource', 'gdshader', 'gd'},
+        auto_install = true,
+        highlight = { enable = true },
+        indent = { enable = true },
+      }
+    end,
+  },
 }
