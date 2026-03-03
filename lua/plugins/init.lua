@@ -14,8 +14,6 @@ return {
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-nvim-lsp' },
-    { 'Decodetalkers/csharpls-extended-lsp.nvim' },
-    { 'folke/lazydev.nvim', ft = 'lua', opts = {} }, -- Added this for your 'vim' global issue
 
     -- Debugging
     {
